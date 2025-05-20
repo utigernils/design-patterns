@@ -6,6 +6,9 @@ TODO:
 - adapter pattern: geometry example
 - builder pattern: league table entry, something else?
 - state pattern:
+    - idea: text editor in browser using local storage for "file names"
+        - editor: dirty/clean (modified, not modified)
+        - file: saved/unsaved (file name known/unknown)
     - idea: countdouwn abstraction
         - created
         - running

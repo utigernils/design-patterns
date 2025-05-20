@@ -1,5 +1,19 @@
 # Entwurfsmuster (Design Patterns)
 
+TODO:
+
+- general instructions (and links to pattern website?)
+- adapter pattern: geometry example
+- builder pattern: league table entry, something else?
+- state pattern:
+    - idea: countdouwn abstraction
+        - created
+        - running
+        - paused
+        - finished
+    - refactor switch/case to state objects
+    - the state is not shared but re-created (using the countdown value)
+
 ## Parkhaussimulation
 
 Entwurfsmuster: [Observer](https://refactoring.guru/design-patterns/observer) (_behavioral_)

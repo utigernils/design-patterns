@@ -6,7 +6,7 @@
     "build": "npx tsc",
     "test": "npx jest",
     "lint": "npx eslint",
-    "start": "node dist/index.js"
+    "parkinglot": "node dist/parking-lot.simulation.js"
   },
   "keywords": [],
   "author": "Patrick Bucher",

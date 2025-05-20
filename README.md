@@ -18,9 +18,9 @@ TODO:
 
 Entwurfsmuster: [Observer](https://refactoring.guru/design-patterns/observer) (_behavioral_)
 
-In `src/parking-lot.ts` und `index.ts` ist eine Parkhaussimulation implementiert, die folgendermassen gestartet werden kann:
+In `src/parking-lot.ts` und `src/parking-lot.simulation.ts` ist eine Parkhaussimulation implementiert, die folgendermassen gestartet werden kann:
 
-    npm run build && npm run start
+    npm run build && npm run parkinglot
 
 Ein Parkhaus (`ParkingLot`) hat einen Namen (`name`), eine Kapazität (`capacity`) und einen Füllstand (`occupied`). Mithilfe der Methoden `enter()` und `exit()` kann ein Auto in das Parkhaus einfahren bzw. dieses verlassen.
 

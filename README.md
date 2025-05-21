@@ -1,11 +1,20 @@
 # Entwurfsmuster (Design Patterns)
 
-TODO:
+Der Seitenbereich [Design Patterns](https://refactoring.guru/design-patterns) von [refactoring.guru](https://refactoring.guru/) enthält hilfreiche Informationen zum Lösen der folgenden Aufgaben.
 
-- general instructions (and links to pattern website?)
-- adapter pattern: geometry example
+Erstelle einen Fork vom vorliegenden Repository und klone anschliessend diesen Fork. Bearbeite dann die folgenden Aufgaben.
 
-## Parkhaussimulation
+## Aufgabe 0: Geometry
+
+Entwurfsmuster: [Adapter](https://refactoring.guru/design-patterns/adapter) (_structural_)
+
+Hierbei handelt es sich um das Beispiel von den Folien, jedoch von C# auf TypeScript umgeschrieben.
+
+Studiere den Code in den Dateien `src/geometry.ts`, `src/geometry.third-party.ts` und `src/geometry.test.ts`.
+
+Erweitere anschliessend die Klasse `Calculator` um eine weitere Methode `getWidthHeightRatio(Rectangular)`, welche das Vehältnis der Breite zur Höhe des mitgegebenen rechteckigen Objekts berechnet. Bei Quadraten müsste das Verhältnis jeweils `1.0` betragen.
+
+## Aufgabe 1: Parkhaussimulation
 
 Entwurfsmuster: [Observer](https://refactoring.guru/design-patterns/observer) (_behavioral_)
 
@@ -44,7 +53,7 @@ Diese kompakte Ausgabe ist nur möglich, wenn auf Polling (d.h. Anfragen in
 bestimmten Intervallen) verzichtet wird und man stattdessen einen Mechanismus
 wie einen Observer verwendet.
 
-## Texteditor
+## Aufgabe 2: Texteditor
 
 Entwurfsmuster: [State](https://refactoring.guru/design-patterns/state)
 

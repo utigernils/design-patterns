@@ -6,16 +6,16 @@ TODO:
 - adapter pattern: geometry example
 - builder pattern: league table entry, something else?
 - state pattern:
-    - idea: text editor in browser using local storage for "file names"
-        - editor: dirty/clean (modified, not modified)
-        - file: saved/unsaved (file name known/unknown)
-    - idea: countdouwn abstraction
-        - created
-        - running
-        - paused
-        - finished
-    - refactor switch/case to state objects
-    - the state is not shared but re-created (using the countdown value)
+  - idea: text editor in browser using local storage for "file names"
+    - editor: dirty/clean (modified, not modified)
+    - file: saved/unsaved (file name known/unknown)
+  - idea: countdouwn abstraction
+    - created
+    - running
+    - paused
+    - finished
+  - refactor switch/case to state objects
+  - the state is not shared but re-created (using the countdown value)
 
 ## Parkhaussimulation
 
@@ -32,7 +32,7 @@ In `index.ts` wird das Ein- und Ausfahren von Autos mit asynchronen Funktionen s
 Bauen Sie die Simulation foldendermassen um:
 
 1. Das Parkhaus soll als _Publisher_ agieren und seine _Subscriber_ jeweils informieren, wenn ein Auto in das Parkhaus einfährt oder es verlässt.
-    - Erstellen Sie hierzu zwei Interfaces `Publisher` und `Subscriber` mit den entsprechenden Methoden.
+   - Erstellen Sie hierzu zwei Interfaces `Publisher` und `Subscriber` mit den entsprechenden Methoden.
 2. Eine neue Klasse namens `Display` soll als _Subscriber_ agieren, welcher über ein- und ausfahrende Autos des Parkhauses informiert wird.
 3. Überlegen Sie sich, ob die Ereignisse als eine Reihe von Variablen (Name des Parkhauses, Füllstand usw.) übermittelt werden sollen, oder ob hier ein spezielles `Event`-Objekt hilfreich wäre.
 4. Ein- und ausfahrende Autos einerseits und der Füllstand des Parkhauses andererseits sollen nicht mehr in getrennten Meldungen ausgegeben werden, sondern zusammen als eine Meldung:

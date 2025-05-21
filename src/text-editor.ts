@@ -5,12 +5,12 @@ enum State {
   DirtySaved,
 }
 
+const textArea = document.getElementById("text") as HTMLTextAreaElement;
 let state = State.CleanUnsaved;
-let openFile = "";
+let openFile = undefined;
 
 document.addEventListener("DOMContentLoaded", () => {
   showFiles(listFiles(), "files-list");
-  const textArea = document.getElementById("text");
   textArea.addEventListener("input", () => {
     if (state == State.CleanSaved) {
       state = State.DirtySaved;
@@ -19,6 +19,47 @@ document.addEventListener("DOMContentLoaded", () => {
       state = State.DirtyUnsaved;
       setStateLabel("*");
     }
+  });
+  const saveAsButton = document.getElementById("save-as-button");
+  saveAsButton.addEventListener("click", () => {
+    const content = textArea.value;
+    let filename = prompt("Enter a File Name", "");
+    if (filename.trim() != "") {
+      if (!filename.endsWith(".txt")) {
+        filename = filename + ".txt";
+      }
+      localStorage.setItem(filename, content);
+      state = State.CleanSaved;
+      openFile = filename;
+      setStateLabel(filename);
+      showFiles(listFiles(), "files-list");
+    }
+  });
+  const saveButton = document.getElementById("save-button");
+  saveButton.addEventListener("click", () => {
+    const content = textArea.value;
+    if (state == State.CleanSaved || state == State.DirtySaved) {
+      localStorage.setItem(openFile, content);
+      state = State.CleanSaved;
+      setStateLabel(openFile);
+      showFiles(listFiles(), "files-list");
+    } else {
+      const filename = prompt("Enter a File Name", "");
+      if (filename.trim() != "") {
+        localStorage.setItem(filename, content);
+        state = State.CleanSaved;
+        openFile = filename;
+        setStateLabel(filename);
+        showFiles(listFiles(), "files-list");
+      }
+    }
+  });
+  const newButton = document.getElementById("new-button");
+  newButton.addEventListener("click", () => {
+    state = State.CleanUnsaved;
+    textArea.value = "";
+    openFile = undefined;
+    setStateLabel(" ");
   });
 });
 
@@ -35,26 +76,23 @@ function showFiles(files: string[], parentId: string) {
   for (const file of files) {
     const item = document.createElement("li");
     const link = document.createElement("a");
-    link.setAttribute("data-file-name", file);
-    const text = document.createTextNode(file);
-    link.appendChild(text);
+    link.innerHTML = file;
     item.appendChild(link);
     parent.append(item);
+    link.addEventListener("click", () => {
+      const content = localStorage.getItem(file);
+      openFile = file;
+      textArea.value = content;
+      state = State.CleanSaved;
+      setStateLabel(file);
+    });
   }
-}
-
-function saveFile(name: string, content: string) {
-  localStorage.setItem(name, content);
-}
-
-function readFile(name: string): string {
-  return localStorage.getItem(name);
 }
 
 function listFiles(): string[] {
   const files: string[] = [];
   for (let i = 0; i < localStorage.length; i++) {
-    files.push(localStorage.getItem(localStorage.key(i)));
+    files.push(localStorage.key(i));
   }
   return files;
 }

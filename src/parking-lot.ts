@@ -3,7 +3,7 @@ export class ParkingLot {
 
   constructor(
     public name: string,
-    public capacity: number
+    public capacity: number,
   ) {}
 
   enter() {

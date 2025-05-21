@@ -4,18 +4,6 @@ TODO:
 
 - general instructions (and links to pattern website?)
 - adapter pattern: geometry example
-- builder pattern: league table entry, something else?
-- state pattern:
-  - idea: text editor in browser using local storage for "file names"
-    - editor: dirty/clean (modified, not modified)
-    - file: saved/unsaved (file name known/unknown)
-  - idea: countdouwn abstraction
-    - created
-    - running
-    - paused
-    - finished
-  - refactor switch/case to state objects
-  - the state is not shared but re-created (using the countdown value)
 
 ## Parkhaussimulation
 
@@ -55,3 +43,9 @@ Neu:
 Diese kompakte Ausgabe ist nur möglich, wenn auf Polling (d.h. Anfragen in
 bestimmten Intervallen) verzichtet wird und man stattdessen einen Mechanismus
 wie einen Observer verwendet.
+
+## Texteditor
+
+Entwurfsmuster: [State](https://refactoring.guru/design-patterns/state)
+
+TODO

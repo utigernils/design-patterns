@@ -64,6 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
     openFile = undefined;
     setStateLabel("_");
   });
+  document.addEventListener("contextmenu", (event) => {
+    alert("Wanna steal my source code, huh!?");
+    event.preventDefault();
+    return false;
+  });
 });
 
 function setStateLabel(value: string) {

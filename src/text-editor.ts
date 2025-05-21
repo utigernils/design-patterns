@@ -44,8 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
       setStateLabel(openFile);
       showFiles(listFiles(), "files-list");
     } else {
-      const filename = prompt("Enter a File Name", "");
+      let filename = prompt("Enter a File Name", "");
       if (filename.trim() != "") {
+        if (!filename.endsWith(".txt")) {
+          filename = filename + ".txt";
+        }
         localStorage.setItem(filename, content);
         state = State.CleanSaved;
         openFile = filename;
@@ -59,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     state = State.CleanUnsaved;
     textArea.value = "";
     openFile = undefined;
-    setStateLabel(" ");
+    setStateLabel("_");
   });
 });
 

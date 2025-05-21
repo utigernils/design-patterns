@@ -12,3 +12,8 @@ body {
 #files-list li {
   cursor: pointer;
 }
+
+h2 {
+  font-size: 100%;
+  font-style: italic;
+}

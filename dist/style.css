@@ -1,0 +1,7 @@
+body {
+    margin: 1em auto;
+    max-width: 768px;
+    background-color: dimgrey;
+    color: lightgray;
+    font-family: sans-serif;
+}

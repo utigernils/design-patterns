@@ -48,4 +48,19 @@ wie einen Observer verwendet.
 
 Entwurfsmuster: [State](https://refactoring.guru/design-patterns/state)
 
-TODO
+In `src/text-editor.ts` und in [`dist/index.html`](dist/index.html) ist ein Text-Editor implementiert, der Texteingaben als Pseudo-Dateien im `localStorage` des Browsers ablegt.
+
+Ein Text kann entweder einem Dateinamen zugeordnet sein ("saved") oder nicht ("unsaved"). Gegenüber der letzten Speicherung kann der Text eine Änderung erfahren haben ("dirty") oder keine Veränderung haben ("clean"). Aus diesen beiden Aspekten ergeben sich folgende Zustände, die in der `enum State` definiert sind:
+
+- `CleanUnsaved`: keine Veränderung, kein Dateiname
+- `CleanSaved`: keine Veränderung, Dateiname vorhanden
+- `DirtyUnsaved`: mit Veränderung, kein Dateiname vorhanden
+- `DirtySaved`: mit Veränderung, Dateiname vorhanden
+
+Mit der Variable `state` wird der jeweilige Zustand des Editors festgehalten. Verschiedene Stellen im Code reagieren unterschiedlich auf diesen Zustand. Beispiel: Bei `*Unsaved`-Zuständen muss beim Betätigen der `Save`-Schaltfläche ein Dateiname angegeben werden, bei `*Saved`-Zuständen hingegen wird der zuletzt verwendete Dateinamen verwendet.
+
+Verbessere den Quellcode, indem du das Sate-Entwurfsmuster implementierst. Aus der `enum State` wird ein Interface, das durch die vier bereits bekannten Zuständen als Klassen implementiert wird.
+
+Wichtig: Der Code muss zu Beginn und nach jeder Änderung kompiliert werden:
+
+    npm run build

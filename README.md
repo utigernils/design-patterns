@@ -2,7 +2,11 @@
 
 Der Seitenbereich [Design Patterns](https://refactoring.guru/design-patterns) von [refactoring.guru](https://refactoring.guru/) enthält hilfreiche Informationen zum Lösen der folgenden Aufgaben.
 
-Erstelle einen Fork vom vorliegenden Repository und klone anschliessend diesen Fork. Bearbeite dann die folgenden Aufgaben.
+Erstelle einen Fork vom vorliegenden Repository und klone anschliessend diesen Fork. Installiere die Abhängigkeiten:
+
+    npm install
+
+Bearbeite dann die folgenden Aufgaben.
 
 ## Aufgabe 0: Geometry
 
